@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Terminal+Dosis">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<div class="tbr">
+		<span id="clock"></span>
+		<script>
+			function clock() {
+			var date = new Date();
+			var options = {
+				hour: 'numeric',
+				minute: 'numeric',
+				second: 'numeric',
+				year: 'numeric',
+				month: 'numeric',
+				day: 'numeric'
+			}
+			document.getElementById('clock').innerHTML = date.toLocaleString("ru", options);
+			window.setTimeout('clock()',1000);
+			}
+			clock();
+		</script>
+	</div>
+	<script src="sptstt.js"></script>
+	<div id="sptst">
+Initializing  "kcm_input" :  "kcminit_mouse"
+Initializing  "kcm_access" :  "kcminit_access"
+Initializing  "kcm_kgamma" :  "kcminit_kgamma"
+QXcbConnection: XCB error: 3 (BadWindow), sequence: 181, resource id: 10486050, major code: 20 (GetProperty), minor code: 0
+kf5.kcoreaddons.kaboutdata: Could not initialize the equivalent properties of Q*Application: no instance (yet) existing.
+QXcbConnection: XCB error: 3 (BadWindow), sequence: 181, resource id: 10486050, major code: 20 (GetProperty), minor code: 0
+Qt: Session management error: networkIdsList argument is NULL
+	</div>
+</body>
+</html>
