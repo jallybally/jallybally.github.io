@@ -1,4 +1,3 @@
-var username = GetCookie('username');
 var color = GetCookie('color');
 function colorRed(){	
 	if (username != 'anonim') {
