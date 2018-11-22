@@ -1,8 +1,13 @@
-function colorRed(){
+var username = GetCookie('username');
+var color = GetCookie('color');
+function colorRed(){	
+	if (username != 'anonim') {
 	document.body.style.color = '#FF0000';
-	document.getElementById('tbr').style.borderBottom = '1px solid red';
-	document.getElementById('popup').style.borderColor = 'red';
+	document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+	document.getElementById('popup').style.borderColor = '#FF0000';
 	document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
+	 document.cookie.SetCookie('red',color);
+	}
 }
 function colorGreen(){
 	document.body.style.color = '#23d82f';

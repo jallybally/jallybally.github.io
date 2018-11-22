@@ -1,16 +1,19 @@
 function cookiest(){
 var username = GetCookie('username');
+var color = GetCookie('color');
 if (username == null) {
-  username = prompt('Пожалуйста, введите Ваше им\я\n(в противном случае нажмите cancel)',"");
+  username = prompt('На сайте используется cookie\nукажите имя пользователя',"");
+  color = 'white';
   if (username == null) {
-    alert('Ну хорошо, тогда я буду звать Вас ВебСёрфером');
-    username = 'ВебСёрфер';
+    alert('Настройки не будут сохранены');
+    username = 'anonim';
   } else {
     pathname = location.pathname;
     myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
     var largeExpDate = new Date ();
     largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
     SetCookie('username',username,largeExpDate,myDomain);
+	
   }
 }
 function getCookieVal (offset) {
@@ -40,7 +43,7 @@ function SetCookie (name, value) {
         var expires = (argc > 2) ? argv[2] : null;
         var path = (argc > 3) ? argv[3] : null;
         var domain = (argc > 4) ? argv[4] : null;
-        var secure = (argc > 5) ? argv[5] : false;
+        var secure = (argc > 5) ? argv[5] : false;		
         document.cookie = name + "=" + escape (value) +
                 ((expires == null) ? "" : ("; expires=" +
 expires.toGMTString())) +
