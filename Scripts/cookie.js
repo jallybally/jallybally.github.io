@@ -1,6 +1,6 @@
 function cookiest(){
 var username = GetCookie('username');
-var color = GetCookie('color');
+var color = GetCookie('value');
 if (username == null) {
   username = prompt('На сайте используется cookie\nукажите имя пользователя',"");
   color = 'white';
