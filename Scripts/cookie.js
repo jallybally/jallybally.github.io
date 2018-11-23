@@ -1,21 +1,4 @@
 var color = GetCookie('username');
-function cookiest(){
-
-if (color == null) {
-	color = 'white';
-	pathname = location.pathname;
-	myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
-	var largeExpDate = new Date ();
-	largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
-	SetCookie('username',color,largeExpDate,myDomain);
-	alertMod('На сайте используется cookie');
-}
-function getCookieVal (offset) {
-	var endstr = document.cookie.indexOf (";", offset);
-	if (endstr == -1)
-		endstr = document.cookie.length;
-	return unescape(document.cookie.substring(offset, endstr));
-}
 function GetCookie (name) {
         var arg = name + "=";
         var alen = arg.length;
@@ -30,6 +13,22 @@ function GetCookie (name) {
                                 break;
                 }
 	return null;
+}
+function cookiest(){
+if (color == null) {
+	color = 'white';
+	pathname = location.pathname;
+	myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+	var largeExpDate = new Date ();
+	largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
+	SetCookie('username',color,largeExpDate,myDomain);
+	alertMod('На сайте используется cookie');
+}
+function getCookieVal (offset) {
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1)
+		endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
 }
 function SetCookie (name, value) {
         var argv = SetCookie.arguments;
