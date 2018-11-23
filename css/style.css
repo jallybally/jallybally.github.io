@@ -1,9 +1,10 @@
 body{
-	background: #000000;
+	background: #000;
 	margin-top: 0;
 	font-size: 10pt;
 	font-family: Terminal Dosis;
-	color: #ffffff;
+	color: #fff;
+	z-index: 1;
 }
 #clock{
 	float: right;
@@ -18,6 +19,7 @@ body{
 	height: 20px;
 	width: 100%;
 	border-bottom: 1px solid white;
+	text-transform: uppercase;
 }
 #sptst {
 	padding:0px 0px 0px 100px;
@@ -29,7 +31,7 @@ body{
 #sptst .new{
 	opacity: 0;
 }
-#sptst .div_opacity {
+#sptst .div_opacity{
   -webkit-transition: opacity .1s ease-in-out;
   -moz-transition: opacity .1s ease-in-out;
   -ms-transition: opacity .1s ease-in-out;
@@ -37,9 +39,10 @@ body{
   transition: opacity .1s ease-in-out;
   opacity: 1;
 }
-#overlay{
+#overlay .overlay{
 	position: fixed;
 	display: none;
+	background:rgba(51, 51, 51, 0.82);
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -55,9 +58,9 @@ body{
 	height: auto;
     position: absolute;
 	padding: 5px;
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     background: rgba(0,0,0,0.75);
-    z-index: 100;
+    z-index: 89;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 	text-align: center;
@@ -87,12 +90,10 @@ nav ul{
 	clear: both;
 }
 .menu > li{
-
 	float: left;
 	position: relative;
 }
-.menu > li > p, a{
-	text-transform: uppercase;
+.menu > li > p, a{	
 	font-size: 10pt;
 	margin: 0;
 	padding-right: 5px
@@ -119,4 +120,41 @@ nav ul{
 .menu > li:hover .colormenu{
 	opacity: 1;
 	transform: scaleY(1);
+}
+/*alert*/
+#alertm_all{
+	width:163px;
+	height:40px;
+	position: absolute;
+	top: 21px;
+	right: 9.4%;
+	background-color: #000;
+	border: 1px solid;
+	border-color: #fff;
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-top: 0px;
+	padding: 3px;
+	
+}
+.alertm_all a{
+	-webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    color: #0275d8;
+}
+.alertm_all a:hover{    
+	color: #222;
+}
+.alertm_h1{    
+	color: #0275d8;
+    font-size: 19px;
+}
+.alertm_wrapper{
+	color: #000;
+}
+.alertm_but{
+    text-align: center;
+    cursor: pointer;	
 }
