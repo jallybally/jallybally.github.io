@@ -45,19 +45,8 @@ expires.toGMTString())) +
                 ((secure == true) ? "; secure" : "");
 }
 /*document.getElementById('user').innerHTML = username;*/
-}
-/*alert*/
-function alertMod(content,afterFunction){
-	$('<div id="alertm_all">'+content+'<div class="alertm_but" onclick="alert_close('+afterFunction+'); return false">OK</div></div>').appendTo('body');
-	$(".overlay, .alertm_all").fadeIn("slow");
-}
-function alert_close(afterFunctionClouse){
-	$(".overlay, #alertm_all").remove();
-	afterFunctionClouse;
-}
 /*Color*/
 function colorRed(){
-	var color = GetCookie('username');
 	if(color != 'red'){
 	color = 'red';
 	document.body.style.color = '#FF0000';
@@ -111,4 +100,15 @@ function colorWhite(){
 	document.getElementById('popup').style.borderColor = '#ffffff';
 	document.getElementById('alertm_all').style.borderColor = '#ffffff';
 	document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_white.png?raw=true';
+}
+
+}
+/*alert*/
+function alertMod(content,afterFunction){
+	$('<div id="alertm_all">'+content+'<div class="alertm_but" onclick="alert_close('+afterFunction+'); return false">OK</div></div>').appendTo('body');
+	$(".overlay, .alertm_all").fadeIn("slow");
+}
+function alert_close(afterFunctionClouse){
+	$(".overlay, #alertm_all").remove();
+	afterFunctionClouse;
 }
