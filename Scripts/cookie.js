@@ -1,20 +1,6 @@
-var color = GetCookie('username');
-function GetCookie (name) {
-        var arg = name + "=";
-        var alen = arg.length;
-        var clen = document.cookie.length;
-        var i = 0;
-        while (i < clen) {
-                var j = i + alen;
-                if (document.cookie.substring(i, j) == arg)
-                        return getCookieVal (j);
-                i = document.cookie.indexOf(" ", i) + 1;
-                        if (i == 0)
-                                break;
-                }
-	return null;
-}
+var color
 function cookiest(){
+var color = GetCookie('username');
 if (color == null) {
 	color = 'white';
 	pathname = location.pathname;
@@ -29,6 +15,21 @@ function getCookieVal (offset) {
 	if (endstr == -1)
 		endstr = document.cookie.length;
 	return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+                var j = i + alen;
+                if (document.cookie.substring(i, j) == arg)
+                        return getCookieVal (j);
+                i = document.cookie.indexOf(" ", i) + 1;
+                        if (i == 0)
+                                break;
+                }
+	return null;
 }
 function SetCookie (name, value) {
         var argv = SetCookie.arguments;
@@ -45,7 +46,7 @@ expires.toGMTString())) +
                 ((secure == true) ? "; secure" : "");
 }
 /*document.getElementById('user').innerHTML = username;*/
-
+	return color;
 }
 /*alert*/
 function alertMod(content,afterFunction){
