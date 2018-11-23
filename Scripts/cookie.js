@@ -2,19 +2,13 @@ function cookiest(){
 var username = GetCookie('username');
 var color = GetCookie('value');
 if (username == null) {
-  username = prompt('На сайте используется cookie\nукажите имя пользователя',"");
-  color = 'white';
-  if (username == null) {
-    alert('Настройки не будут сохранены');
-    username = 'anonim';
-  } else {
-    pathname = location.pathname;
-    myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
-    var largeExpDate = new Date ();
-    largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
-    SetCookie('username',username,largeExpDate,myDomain);
-	
-  }
+	username = 'white';
+	pathname = location.pathname;
+	myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+	var largeExpDate = new Date ();
+	largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
+	SetCookie('username',username,largeExpDate,myDomain);
+	alertMod('На сайте используется cookie');
 }
 function getCookieVal (offset) {
    var endstr = document.cookie.indexOf (";", offset);
