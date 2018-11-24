@@ -1,5 +1,5 @@
 function cookiest(){
- color = GetCookie('username');
+ var color = GetCookie('username');
 	if (color == null) {
 		color = 'white';
 		pathname = location.pathname;
@@ -57,7 +57,7 @@ expires.toGMTString())) +
                 ((domain == null) ? "" : ("; domain=" + domain)) +
                 ((secure == true) ? "; secure" : "");
 }
-document.getElementById('user').innerHTML = color;
+/*document.getElementById('user').innerHTML = username;*/
 }
 
 /*alert*/
@@ -71,7 +71,7 @@ function alert_close(afterFunctionClouse){
 }
 /*Color*/
 function colorRed(){
-	color = GetCookie('username');
+	var color = GetCookie('username');
 	function GetCookie (name) {
 			var arg = name + "=";
 			var alen = arg.length;
