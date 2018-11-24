@@ -45,7 +45,7 @@ expires.toGMTString())) +
                 ((domain == null) ? "" : ("; domain=" + domain)) +
                 ((secure == true) ? "; secure" : "");
 }
-/*document.getElementById('user').innerHTML = username;*/
+/*document.getElementById('user').innerHTML = color;*/
 	return color;
 }
 document.getElementById('user').innerHTML = username;
