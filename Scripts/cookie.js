@@ -13,14 +13,9 @@ function cookiest(){
 		document.body.style.color = '#FF0000';
 		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
 		document.getElementById('popup').style.borderColor = '#FF0000';
-		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';		
+		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+		document.getElementById('alertm_all').style.borderColor = '#FF0000';
 		document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
-		if (document.getElementById('alertm_all') == null){
-			
-		}
-		else{
-			document.getElementById('alertm_all').style.borderColor = '#FF0000';
-		}
 	}
 function getCookieVal (offset) {
 	var endstr = document.cookie.indexOf (";", offset);
