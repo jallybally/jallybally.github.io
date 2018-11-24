@@ -127,7 +127,6 @@ function colorRed(){
 			var largeExpDate = new Date ();
 			largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
 			SetCookie('username',color,largeExpDate,myDomain);
-			alertMod('На сайте используется cookie');
 		}
 		else {
 			document.body.style.color = '#FF0000';
@@ -187,7 +186,6 @@ function colorGreen(){
 			var largeExpDate = new Date ();
 			largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
 			SetCookie('username',color,largeExpDate,myDomain);
-			alertMod('На сайте используется cookie');
 		}
 		else {
 			document.body.style.color = '#23d82f';
@@ -246,7 +244,6 @@ function colorBlue(){
 			var largeExpDate = new Date ();
 			largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
 			SetCookie('username',color,largeExpDate,myDomain);
-			alertMod('На сайте используется cookie');
 		}
 		else {
 			document.body.style.color = '#00cedf';
@@ -305,7 +302,6 @@ function colorYellow(){
 			var largeExpDate = new Date ();
 			largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
 			SetCookie('username',color,largeExpDate,myDomain);
-			alertMod('На сайте используется cookie');
 		}
 		else {
 			document.body.style.color = '#f9fb09';
@@ -364,7 +360,6 @@ function colorWhite(){
 			var largeExpDate = new Date ();
 			largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
 			SetCookie('username',color,largeExpDate,myDomain);
-			alertMod('На сайте используется cookie');
 		}
 		else {
 			document.body.style.color = '#ffffff';
