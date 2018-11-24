@@ -48,7 +48,7 @@ expires.toGMTString())) +
 /*document.getElementById('user').innerHTML = color;*/
 	return color;
 }
-document.getElementById('user').innerHTML = username;
+document.getElementById('user').innerHTML = color;
 /*alert*/
 function alertMod(content,afterFunction){
 	$('<div id="alertm_all">'+content+'<div class="alertm_but" onclick="alert_close('+afterFunction+'); return false">OK</div></div>').appendTo('body');
