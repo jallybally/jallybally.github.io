@@ -9,7 +9,7 @@ function cookiest(){
 		SetCookie('username',color,largeExpDate,myDomain);
 		alertMod('На сайте используется cookie');
 	}
-	else if(color == 'red') {
+	else  {
 		document.body.style.color = '#FF0000';
 		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
 		document.getElementById('popup').style.borderColor = '#FF0000';
