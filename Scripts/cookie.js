@@ -9,7 +9,7 @@ function cookiest(){
 		SetCookie('username',color,largeExpDate,myDomain);
 		alertMod('На сайте используется cookie');
 	}
-	else  {
+	else if(color == 'red') {
 		document.body.style.color = '#FF0000';
 		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
 		document.getElementById('popup').style.borderColor = '#FF0000';
@@ -66,54 +66,59 @@ function alert_close(afterFunctionClouse){
 }
 /*Color*/
 function colorRed(){
-	var color = GetCookie('username');
-	function GetCookie (name) {
-			var arg = name + "=";
-			var alen = arg.length;
-			var clen = document.cookie.length;
-			var i = 0;
-			while (i < clen) {
-					var j = i + alen;
-					if (document.cookie.substring(i, j) == arg)
-							return getCookieVal (j);
-					i = document.cookie.indexOf(" ", i) + 1;
-							if (i == 0)
-									break;
-					}
-		return null;
+ var color = GetCookie('username');
+	if (color != 'red') {
+		color = 'red';
+		pathname = location.pathname;
+		myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+		var largeExpDate = new Date ();
+		largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
+		SetCookie('username',color,largeExpDate,myDomain);
+		alertMod('На сайте используется cookie');
 	}
-	function getCookieVal (offset) {
+	else {
+		document.body.style.color = '#FF0000';
+		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+		document.getElementById('popup').style.borderColor = '#FF0000';
+		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+		document.getElementById('alertm_all').style.borderColor = '#FF0000';
+		document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
+	}
+function getCookieVal (offset) {
 	var endstr = document.cookie.indexOf (";", offset);
 	if (endstr == -1)
 		endstr = document.cookie.length;
 	return unescape(document.cookie.substring(offset, endstr));
 }
-	
-	if(color != 'red'){
-	color = 'red';
-	document.body.style.color = '#FF0000';
-	document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
-	document.getElementById('popup').style.borderColor = '#FF0000';
-	document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
-	document.getElementById('alertm_all').style.borderColor = '#FF0000';
-	document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
-		
-		function SetCookie (name, value) {
-			var argv = SetCookie.arguments;
-			var argc = SetCookie.arguments.length;
-			var expires = (argc > 2) ? argv[2] : null;
-			var path = (argc > 3) ? argv[3] : null;
-			var domain = (argc > 4) ? argv[4] : null;
-			var secure = (argc > 5) ? argv[5] : false;		
-			document.cookie = name + "=" + escape (value) +
-					((expires == null) ? "" : ("; expires=" +
-					expires.toGMTString())) +
-					((path == null) ? "" : ("; path=" + path)) +
-					((domain == null) ? "" : ("; domain=" + domain)) +
-					((secure == true) ? "; secure" : "");
-		}
-	}
-	
+function GetCookie (name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+                var j = i + alen;
+                if (document.cookie.substring(i, j) == arg)
+                        return getCookieVal (j);
+                i = document.cookie.indexOf(" ", i) + 1;
+                        if (i == 0)
+                                break;
+                }
+	return null;
+}
+function SetCookie (name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (argc > 2) ? argv[2] : null;
+        var path = (argc > 3) ? argv[3] : null;
+        var domain = (argc > 4) ? argv[4] : null;
+        var secure = (argc > 5) ? argv[5] : false;		
+        document.cookie = name + "=" + escape (value) +
+                ((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+                ((path == null) ? "" : ("; path=" + path)) +
+                ((domain == null) ? "" : ("; domain=" + domain)) +
+                ((secure == true) ? "; secure" : "");
+}
 }
 function colorGreen(){
 	document.body.style.color = '#23d82f';
