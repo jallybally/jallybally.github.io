@@ -1,5 +1,5 @@
 function cookiest(){
-color = GetCookie('username');
+ color = GetCookie('username');
 if (color == null) {
 	color = 'white';
 	pathname = location.pathname;
@@ -44,9 +44,9 @@ expires.toGMTString())) +
                 ((domain == null) ? "" : ("; domain=" + domain)) +
                 ((secure == true) ? "; secure" : "");
 }
-/*document.getElementById('user').innerHTML = color;*/
+/*document.getElementById('user').innerHTML = username;*/
 }
-document.getElementById('user').innerHTML = color;
+
 /*alert*/
 function alertMod(content,afterFunction){
 	$('<div id="alertm_all">'+content+'<div class="alertm_but" onclick="alert_close('+afterFunction+'); return false">OK</div></div>').appendTo('body');
@@ -58,6 +58,23 @@ function alert_close(afterFunctionClouse){
 }
 /*Color*/
 function colorRed(){
+	color = GetCookie('username');
+	function GetCookie (name) {
+			var arg = name + "=";
+			var alen = arg.length;
+			var clen = document.cookie.length;
+			var i = 0;
+			while (i < clen) {
+					var j = i + alen;
+					if (document.cookie.substring(i, j) == arg)
+							return getCookieVal (j);
+					i = document.cookie.indexOf(" ", i) + 1;
+							if (i == 0)
+									break;
+					}
+		return null;
+	}
+	
 	if(color != 'red'){
 	color = 'red';
 	document.body.style.color = '#FF0000';
@@ -66,21 +83,21 @@ function colorRed(){
 	document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
 	document.getElementById('alertm_all').style.borderColor = '#FF0000';
 	document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
-	
-	function SetCookie (name, value) {
-        var argv = SetCookie.arguments;
-        var argc = SetCookie.arguments.length;
-        var expires = (argc > 2) ? argv[2] : null;
-        var path = (argc > 3) ? argv[3] : null;
-        var domain = (argc > 4) ? argv[4] : null;
-        var secure = (argc > 5) ? argv[5] : false;		
-        document.cookie = name + "=" + escape (value) +
-                ((expires == null) ? "" : ("; expires=" +
-				expires.toGMTString())) +
-                ((path == null) ? "" : ("; path=" + path)) +
-                ((domain == null) ? "" : ("; domain=" + domain)) +
-                ((secure == true) ? "; secure" : "");
-	}
+		
+		function SetCookie (name, value) {
+			var argv = SetCookie.arguments;
+			var argc = SetCookie.arguments.length;
+			var expires = (argc > 2) ? argv[2] : null;
+			var path = (argc > 3) ? argv[3] : null;
+			var domain = (argc > 4) ? argv[4] : null;
+			var secure = (argc > 5) ? argv[5] : false;		
+			document.cookie = name + "=" + escape (value) +
+					((expires == null) ? "" : ("; expires=" +
+					expires.toGMTString())) +
+					((path == null) ? "" : ("; path=" + path)) +
+					((domain == null) ? "" : ("; domain=" + domain)) +
+					((secure == true) ? "; secure" : "");
+		}
 	}
 	
 }
