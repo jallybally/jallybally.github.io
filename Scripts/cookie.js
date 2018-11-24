@@ -1,6 +1,5 @@
-var color
 function cookiest(){
-var color = GetCookie('username');
+color = GetCookie('username');
 if (color == null) {
 	color = 'white';
 	pathname = location.pathname;
@@ -46,7 +45,6 @@ expires.toGMTString())) +
                 ((secure == true) ? "; secure" : "");
 }
 /*document.getElementById('user').innerHTML = color;*/
-	return color;
 }
 document.getElementById('user').innerHTML = color;
 /*alert*/
