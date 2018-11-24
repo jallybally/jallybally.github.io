@@ -1,14 +1,22 @@
 function cookiest(){
  color = GetCookie('username');
-if (color == null) {
-	color = 'white';
-	pathname = location.pathname;
-	myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
-	var largeExpDate = new Date ();
-	largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
-	SetCookie('username',color,largeExpDate,myDomain);
-	alertMod('На сайте используется cookie');
-}
+	if (color == null) {
+		color = 'white';
+		pathname = location.pathname;
+		myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+		var largeExpDate = new Date ();
+		largeExpDate.setTime(largeExpDate.getTime() + (3600 * 24 * 30));
+		SetCookie('username',color,largeExpDate,myDomain);
+		alertMod('На сайте используется cookie');
+	}
+	else {
+		document.body.style.color = '#FF0000';
+		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+		document.getElementById('popup').style.borderColor = '#FF0000';
+		document.getElementById('tbr').style.borderBottom = '1px solid #FF0000';
+		document.getElementById('alertm_all').style.borderColor = '#FF0000';
+		document.getElementById('popupIMG').src = 'https://github.com/jallybally/jallybally.github.io/blob/master/css/Resources/gear_red.png?raw=true';
+	}
 function getCookieVal (offset) {
 	var endstr = document.cookie.indexOf (";", offset);
 	if (endstr == -1)
